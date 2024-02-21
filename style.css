@@ -1,57 +1,69 @@
+/* Estilos generales para todos los elementos de la página */
 *{
-    box-sizing: border-box;
+    box-sizing: border-box; /* Utiliza el modelo de caja border-box para todos los elementos */
 }
+
+/* Estilos para el cuerpo de la página */
 body{
-    font-family: 'Courier New', Courier, monospace;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-
+    font-family: 'Courier New', Courier, monospace; /* Fuente de texto */
+    display: flex; /* Usa un layout de caja flexible */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    height: 100vh; /* El cuerpo ocupa el 100% de la altura visible del navegador */
+    overflow: hidden; /* Oculta el desbordamiento de contenido */
+    margin: 0; /* Elimina el margen predeterminado */
 }
+
+/* Estilos para el contenedor principal */
 .container{
-    display: flex;
-    width: 90vw;
-
+    display: flex; /* Usa un layout de caja flexible */
+    width: 90vw; /* El contenedor ocupa el 90% del ancho visible del navegador */
 }
+
+/* Estilos para los paneles o cards */
 .panel{
-    background-size: auto 100%;
-   /* background-size: cover;*/
-    background-position: center;
-    background-repeat: no-repeat;
-    height:80vh ;
-    border-radius:50px ;
-    color: #fff;
-    cursor: pointer;
-    flex: 0.5;
-    margin: 10px;
-    position: relative;
-    transition: flex 0.7s ease-in;
+    background-size: auto 100%; /* Tamaño automático del fondo con altura 100% */
+    /* background-size: cover; */
+    background-position: center; /* Posiciona el fondo en el centro */
+    background-repeat: no-repeat; /* No se repite el fondo */
+    height:80vh ; /* Altura del panel */
+    border-radius:50px ; /* Esquinas redondeadas */
+    color: #fff; /* Color del texto */
+    cursor: pointer; /* Cursor de puntero al pasar por encima */
+    flex: 0.5; /* Flexibilidad del panel */
+    margin: 10px; /* Margen alrededor del panel */
+    position: relative; /* Posición relativa */
+    transition: flex 0.7s ease-in; /* Transición suave */
 }
-.panel h3 {
-    font-size:24px ;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    margin: 0;
-    opacity: 0;
-}
-.panel.active {
-   flex: 5; 
-}
-.panel.active h3{
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
-}
-@media (max-width:480px) {
 
+/* Estilos para los títulos dentro de los paneles */
+.panel h3 {
+    font-size:24px ; /* Tamaño de fuente */
+    position: absolute; /* Posición absoluta */
+    bottom: 20px; /* Distancia desde abajo */
+    left: 20px; /* Distancia desde la izquierda */
+    margin: 0; /* Elimina el margen */
+    opacity: 0; /* Inicialmente invisible */
+}
+
+/* Estilos para los paneles activos */
+.panel.active {
+   flex: 5; /* Expande el panel */
+}
+
+/* Estilos para los títulos dentro de los paneles activos */
+.panel.active h3{
+    opacity: 1; /* Título visible */
+    transition: opacity 0.3s ease-in 0.4s; /* Transición suave */
+}
+
+/* Estilos para dispositivos móviles con ancho igual o menor a 480px */
+@media (max-width:480px) {
     .container{
-        width: 100vw;
+        width: 100vw; /* El contenedor ocupa el 100% del ancho visible del navegador */
     }
     .panel:nth-of-type(4),
     .panel:nth-of-type(5) {
-        display: none;
+        display: none; /* Oculta los paneles 4 y 5 */
     }
 }
